@@ -1,0 +1,22 @@
+name: Student Note Update Check
+
+on:
+  push:
+    paths:
+      - 'student_note.md'
+
+jobs:
+  print-info:
+    runs-on: ubuntu-latest
+    env:
+      STUDENT_NAME: Pratibha Mahadik
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print Repository Name and Student Username
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Student Name: $STUDENT_NAME"
+
